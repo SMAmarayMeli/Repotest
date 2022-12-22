@@ -1,4 +1,4 @@
-package clima
+package main
 
 func main() {
 
