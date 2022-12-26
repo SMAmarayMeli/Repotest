@@ -11,7 +11,7 @@ func main() {
 }
 
 func impuestoSalario(sueldo float64) float64 {
-	if sueldo > 50000 {
+	if sueldo > 50000 && sueldo <= 150000 {
 		return sueldo * 0.17
 	}
 	if sueldo > 150000 {

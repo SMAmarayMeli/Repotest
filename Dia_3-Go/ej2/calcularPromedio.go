@@ -17,10 +17,10 @@ func main() {
 		notas = append(notas, nota)
 	}
 
-	fmt.Println("Promedio: ", promedio(notas))
+	fmt.Println("Promedio: ", promedio(notas...))
 }
 
-func promedio(notas []int) float64 {
+func promedio(notas ...int) float64 {
 	var num int
 	for _, v := range notas {
 		num += v

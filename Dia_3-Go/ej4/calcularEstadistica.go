@@ -46,6 +46,7 @@ func tipoCalculo(calculo string) (result func([]float64) float64, err string) {
 	case calculo == max:
 		result = maximum
 	default:
+		result = nil
 		err = "Error no existe operacion"
 	}
 	return
