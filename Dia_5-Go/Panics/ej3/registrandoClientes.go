@@ -97,7 +97,7 @@ func (c Client) save() (err error) {
 }
 
 func updateCustomers(client Client) {
-	text := fmt.Sprintf("\n%s,%s,%s,%s,%s", client.name, client.dni, client.phone, client.address, client.legajo)
+	text := fmt.Sprintf("%s,%s,%s,%s,%s", client.name, client.dni, client.phone, client.address, client.legajo)
 
 	f, err := os.OpenFile("customers.txt", os.O_APPEND|os.O_WRONLY|os.O_CREATE, 0600)
 	if err != nil {
@@ -105,7 +105,9 @@ func updateCustomers(client Client) {
 	}
 
 	defer f.Close()
-
+	if len(clients) != 1 {
+		text = fmt.Sprintf("\n%s", text)
+	}
 	if _, err = f.WriteString(text); err != nil {
 		panic(err)
 	}
